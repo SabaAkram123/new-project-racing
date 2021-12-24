@@ -1,0 +1,97 @@
+import React from 'react';
+import "./App.css";
+import Greyhound from "./Greyhound";
+import Harness from "./Harness";
+import Thoroughbred from './Thoroughbred';
+import races from "./races";
+import { Component } from 'react/cjs/react.production.min';
+import { render } from '@testing-library/react';
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state ={
+      items:[],
+      isloaded: false,
+    }
+  }
+  componentDidMount(){
+    fetch('https://www.betright.com.au/api/racing/todaysracing')
+    .then (res => res.json())
+    .then(json => {
+      this.setstate({
+        isloaded: true,
+        items: json,
+
+      })
+
+    });
+
+  }
+}
+render()
+
+{
+  var { isloaded, items} = this.state;
+    if(!isloaded){
+      return <div>loading.......</div>;
+
+    }
+    else{
+
+      return(
+        <div className="App">
+          <ul>
+            {
+
+              items.map(item => (
+                <li key={item.VenueId}>
+
+                </li>
+
+              ))
+            };
+          </ul>
+
+        </div>
+
+      );
+    
+      }
+ function App2( )
+{
+  const Greyhound_races1 = () => {
+    navigation.navigate('category1');
+   
+  }
+  const Harness_races1 = () => {
+    navigation.navigate('category2');
+   
+  }
+  const Thoroughbred_races1 = () => {
+    navigation.navigate('category3');
+  }
+
+  return(
+    
+    <div className="app">
+  data has been loadeed
+      <h1>
+        Upcoming Racing</h1>
+        <h2>Greyhound</h2>
+        <button  onClick={Greyhound_races1}>5races </button>
+        <h3>Harness </h3>
+        <button onClick={Harness_races1}>5races</button>
+        <h4>Thoroughbred</h4>
+        <button onClick={Thoroughbred_races1}> 5races</button>
+        <homestack/>
+        
+        
+    </div>
+  );
+  
+}
+}
+
+
+
+export default App2;
