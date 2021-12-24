@@ -1,0 +1,39 @@
+import React from 'react';
+import "./App.css";
+import Greyhound from "./Greyhound";
+import Harness from "./Harness";
+import Thoroughbred from './Thoroughbred';
+import races from "./races";
+
+ function App2( {navigation})
+{
+  const Greyhound_races1 = () => {
+    navigation.navigate('category1');
+   
+  }
+  const Harness_races1 = () => {
+    navigation.navigate('category2');
+   
+  }
+  const Thoroughbred_races1 = () => {
+    navigation.navigate('category3');
+  }
+
+  return(
+    
+    <div className="app">
+  
+      <h1>
+        Upcoming Racing</h1>
+        <h2>Greyhound</h2>
+        <button  onClick={Greyhound_races1}>5races </button>
+        <h3>Harness </h3>
+        <button onClick={Harness_races1}>5races</button>
+        <h4>Thoroughbred</h4>
+        <button onClick={Thoroughbred_races1}> 5races</button>
+        
+  </div>
+  );
+  
+  }
+export default App2;

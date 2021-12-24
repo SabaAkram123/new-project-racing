@@ -1,0 +1,13 @@
+import React from 'react';
+import "./App.css";
+function races(props){
+    return(
+        <div className="races">
+            <h1>{props.Venue_name}:</h1>
+            <h2>{props.race_number}:</h2>
+            <h3>{props.Advertised_start_time}:</h3>
+        </div>
+    );
+
+}
+export default races;

@@ -1,0 +1,25 @@
+import { createStackNavigator} from 'react-navigation-stack';
+import { createAppContainer} from 'react-navigation';
+import App from "./App";
+import Greyhound from "./Greyhound";
+import Harness from "./Harness";
+import Thoroughbred from './Thoroughbred';
+import Greyhound1 from './Greyhound';
+
+const screens ={
+
+    Home:{
+        screen: App
+    },
+    category1: {
+        screen: Greyhound
+    },
+    category2: {
+        screen: Harness
+    },
+    category3: {
+        screen: Thoroughbred
+    }
+}
+const Homestack = createStackNavigator(screens);
+export default createAppContainer(Homestack);
